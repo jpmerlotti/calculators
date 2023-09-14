@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/f_graus.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <script type="module" src="./js/main.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <header class="py-3 d-flex justify-content-center">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="index.html" class="nav-link">MENU</a></li>
+                    <li class="nav-item"><a href="primeiro_grau.html" class="nav-link">Função 1º Grau</a></li>
+                    <li class="nav-item"><a href="segundo_grau.html" class="nav-link active" aria-current="page">Função
+                            2º Grau</a></li>
+                </ul>
+            </header>
+        </div>
+    </nav>
+
+    <main>
+        F(<input type="text" id="x" class="form form-control-sm" placeholder="x">)
+        =
+        <input type="text" id="a" class="form form-control-lg" placeholder="A">
+        x²
+        +
+        <input type="text" id="b" class="form form-control-lg" placeholder="B">
+        x
+        +
+        <input type="text" id="c" class="form form-control-lg" placeholder="C">
+    </main>
+
+    <div class="div">
+        <button class="form-control-lg" id="btnExec2">Calc</button>
+    </div>
+
+    <section>
+        <h2>RESULTADO</h2>
+        <h4>Valores de X que fazem Y ser zero: </h4>
+        <h4 id="posY"></h4>
+        <h4>Valores do vértice: </h4>
+        <h4 id="vertice"></h4>
+    </section>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+        type: 'line',
+        data: {
+        labels: [labels()],
+        datasets: [{
+            label: '#Função de 2º Grau',
+            data: [data()],
+            borderWidth: 1
+        }]
+        },
+        options: {
+        scales: {
+            y: {
+            beginAtZero: true
+            }
+        }
+        }
+        });
+    </script>
+</body>
+
+</html>
